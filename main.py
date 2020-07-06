@@ -21,17 +21,20 @@ d_arr = np.asarray(roll_res)
 s_arr = np.asarray(stats_list)
 
 #Stat variables go here
-Strength = d_arr[0]
-Dexterity = d_arr[1]
-Constitution = d_arr[2]
-Intelligence = d_arr[3]
-Wisdom = d_arr[4]
-Charisma = d_arr[5]
+str_score = d_arr[0]
+dex_score = d_arr[1]
+con_score = d_arr[2]
+int_score = d_arr[3]
+wis_score = d_arr[4]
+cha_score = d_arr[5]
+
+#Attribute Bonuses will go here. 
+
 
 #do this as one command in the future, ierate with for loop?
-print(s_arr[0], Strength)
-print(s_arr[1], Dexterity)
-print(s_arr[2], Constitution)
-print(s_arr[3], Intelligence)
-print(s_arr[4], Wisdom)
-print(s_arr[5], Charisma)
+#print(s_arr[0], str_score)
+#print(s_arr[1], dex_score)
+#print(s_arr[2], con_score)
+#print(s_arr[3], int_score)
+#print(s_arr[4], wis_score)
+#print(s_arr[5], cha_score)
