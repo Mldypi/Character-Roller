@@ -14,16 +14,24 @@ def char_roll():
 #stores character roll in variable
 roll_res = char_roll()
 
-stats_list = ["strength:", "dexterity:", "constitution:", "intelligence:", "wisdom:", "charisma:"]
+stats_list = ["Strength:", "Dexterity:", "Constitution:", "Intelligence:", "Wisdom:", "Charisma:"]
 
-#convert lists to arrays
+#convert lists to arrays. d_arr = dice array, character rolls. s_arr = stat array, names
 d_arr = np.asarray(roll_res)
 s_arr = np.asarray(stats_list)
 
+#Stat variables go here
+Strength = d_arr[0]
+Dexterity = d_arr[1]
+Constitution = d_arr[2]
+Intelligence = d_arr[3]
+Wisdom = d_arr[4]
+Charisma = d_arr[5]
+
 #do this as one command in the future, ierate with for loop?
-print(s_arr[0], d_arr[0])
-print(s_arr[1], d_arr[1])
-print(s_arr[2], d_arr[2])
-print(s_arr[3], d_arr[3])
-print(s_arr[4], d_arr[4])
-print(s_arr[5], d_arr[5])
+print(s_arr[0], Strength)
+print(s_arr[1], Dexterity)
+print(s_arr[2], Constitution)
+print(s_arr[3], Intelligence)
+print(s_arr[4], Wisdom)
+print(s_arr[5], Charisma)
