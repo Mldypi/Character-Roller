@@ -36,7 +36,7 @@ int_score = d_arr[3]
 wis_score = d_arr[4]
 cha_score = d_arr[5]
 
-print("unmodified str score: " +str(str_score))   #prints str_score for tests
+#print("unmodified str score: " +str(str_score))   #prints str_score for tests
 
 #do this as one command in the future, iterate with for loop?
 #print(s_arr[0], str_score)
@@ -102,4 +102,64 @@ def racial_attrib_score():
 
 str_score = racial_attrib_score()
 
-print("str with racial score: " + str(str_score))   #test print to see if attribute adder worked
+#print("str with racial score: " + str(str_score))   #test print to see if attribute adder worked
+
+#skills will go here
+Skills = {
+  'strength': ['athletics',],
+  'dexterity': ['acrobatics', 'sleight_of_hand', 'stealth'],
+  'intelligence': ['arcana', 'history', 'investigation', 'nature', 'religion'],
+  'wisdom': ['animal_handling', 'insight', 'medicine', 'perception', 'survival'],
+  'charisma': ['deception', 'intimidation', 'performance', 'persuasion']
+   }
+
+#Contains features common to all classes
+class CharacterClass:
+  def __init__(self, character_class, **kw):
+    self.character_class = character_class
+    self.class_skills = kw.get('class_skills')
+    self.class_features = None
+    self.hit_dice = None
+    self.proficiencies = None
+
+
+
+#Fighter is an instance of the CharacterClass class, this will go for all classes unless I use a JSON file.
+Fighter = CharacterClass("fighter")
+Fighter.class_features = {
+  'fight_lvl_1': ['fighting_style', 'second_wind'],
+  'fight_lvl_2': ['action_surge_1'],
+  'fight_lvl_3': ['martial_archetype'],
+  'fight_lvl_4': ['asi_1'],
+  'fight_lvl_5': ['extra_attack_1'],
+  'fight_lvl_6': ['asi_2'],
+  'fight_lvl_7': ['martial_archetype_feature_1'],
+  'fight_lvl_8': ['asi_3'],
+  'fight_lvl_9': ['indomitable_1'],
+  'fight_lvl_10': ['martial_archetype_feature_2'],
+  'fight_lvl_11': ['extra_attack_2'],
+  'fight_lvl_12': ['asi_4'],
+  'fight_lvl_13': ['indomitable_2'],
+  'fight_lvl_14': ['asi_5'],
+  'fight_lvl_15': ['martial_archetype_feature_3'],
+  'fight_lvl_16': ['asi_6'],
+  'fight_lvl_17': ['action_surge_2', 'indomitable_3'],
+  'fight_lvl_18': ['martial_archetype_feature_4'],
+  'fight_lvl_19': ['asi_7'],
+  'fight_lvl_20': ['extra_attack_3'],
+
+}
+
+Fighter.hit_dice = {
+
+}
+
+Fighter.proficiencies = {
+  'armor': ['light_armor', 'medium_armor', 'heavy_armor'],
+  'weapons': ['simple_weapons', 'martial_weapons'],
+  'saving_throws': ['strength', 'constitution'],
+  'skills': ['acrobatics', 'animal_handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival']
+  }
+
+print(Fighter.class_features['fight_lvl_1'])
+print(Fighter.proficiencies['weapons'])
