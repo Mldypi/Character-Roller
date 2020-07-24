@@ -36,7 +36,6 @@ int_score = d_arr[3]
 wis_score = d_arr[4]
 cha_score = d_arr[5]
 
-
 #print("unmodified str score: " +str(str_score))   #prints str_score for tests
 
 #do this as one command in the future, iterate with for loop?
@@ -83,9 +82,9 @@ class PlayerCharacter:
     self.flaws = None
     self.traits = None
   
-  def character_name(self):
-    character_name = input("What is your name?\n")
-    return (character_name)
+  def calc_character_name(self):
+    self.character_name = input("What is your name?\n")
+    return (self.character_name)
 
   def calc_prof_bonus(self):
     if self.total_character_level >= 1 and self.total_character_level <= 4:
@@ -100,14 +99,15 @@ class PlayerCharacter:
       self.prof_bonus = 6
     return self.prof_bonus
 
+#test character name
+#new_char = PlayerCharacter()
+#new_char.calc_character_name()
+#print("Hello "+ new_char.character_name)
 
-new_char = PlayerCharacter()
-#new_char.character_name()
-
-new_char.total_character_level = 12
-new_char.calc_prof_bonus()
-print (new_char.prof_bonus)
-
+#testing proficiency bonus calculator 
+#new_char.total_character_level = 12
+#new_char.calc_prof_bonus()
+#print (new_char.prof_bonus)
 
 #Races will go here. Class has kw arg so that these items cna be referenced in other functions. These items are the defaults, applied to all races - exceptions are written into the races (most races are medium, so medium is the default. halflings are small, so will have a 'size' of 'small'.)
 #Dragonborn, Dwarf, Elf, Gnome, Half-elf, Halfling, Half-Orc, Human, Tiefling
@@ -150,16 +150,12 @@ Races = {
 }
 
 #adds racial attribute bonus to str_score and redefines str_score as the new number. Will edit this later to be either universal, or add more equations per race.
-
 #def racial_attrib_score():
  # racial_attrib = (str_score + (Races['mountain_dwarf'].stat_mods['stre']))
   #return int(racial_attrib)
-
 #str_score = racial_attrib_score()
 
 #print("str with racial score: " + str(str_score))   #test print to see if attribute adder worked
-
-
 
 #Contains features common to all classes. Proficiencies contains armor, weapons, tools, saving throws, skills
 class CharacterClass:
@@ -169,8 +165,6 @@ class CharacterClass:
     self.hit_dice = None
     self.proficiencies = None
     self.class_level = 1
-
-
 
 #Fighter is an instance of the CharacterClass class, this will go for all classes unless I use a JSON file.
 Fighter = CharacterClass("fighter")
@@ -199,7 +193,6 @@ Fighter.class_features = {
 }
 
 Fighter.hit_dice = 10
-
 
 Fighter.proficiencies = {
   'armor': ['light_armor', 'medium_armor', 'heavy_armor'],
