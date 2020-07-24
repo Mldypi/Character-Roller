@@ -1,3 +1,0 @@
-class Fighter:
-  __init__(self, Features)
-  
