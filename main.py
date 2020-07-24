@@ -84,28 +84,29 @@ class PlayerCharacter:
     self.traits = None
   
   def character_name(self):
-    character_name = input("What is your name?")
+    character_name = input("What is your name?\n")
     return (character_name)
 
-  def prof_bonus(self):
-    if total_character_level >= 1 and total_character_level <= 4:
+  def calc_prof_bonus(self):
+    if self.total_character_level >= 1 and self.total_character_level <= 4:
       self.prof_bonus = 2
-    if total_character_level >= 5 and total_character_level <= 8:
+    elif self.total_character_level >= 5 and self.total_character_level <= 8:
       self.prof_bonus = 3
-    if total_character_level >= 9 and total_character_level <= 12:
+    elif self.total_character_level >= 9 and self.total_character_level <= 12:
       self.prof_bonus = 4
-    if total_character_level >= 13 and total_character_level <= 16:
+    elif self.total_character_level >= 13 and self.total_character_level <= 16:
       self.prof_bonus = 5
-    if total_character_level >= 17 and total_character_level <= 20:
+    elif self.total_character_level >= 17 and self.total_character_level <= 20:
       self.prof_bonus = 6
     return self.prof_bonus
 
 
 new_char = PlayerCharacter()
-new_char.prof_bonus()
-new_char.total_character_level = 5
-print (new_char.prof_bonus)
+#new_char.character_name()
 
+new_char.total_character_level = 12
+new_char.calc_prof_bonus()
+print (new_char.prof_bonus)
 
 
 #Races will go here. Class has kw arg so that these items cna be referenced in other functions. These items are the defaults, applied to all races - exceptions are written into the races (most races are medium, so medium is the default. halflings are small, so will have a 'size' of 'small'.)
